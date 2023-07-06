@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  maven:
+    build: ./maven
+    volumes: 
+      - app:/app/joinfaces-maven-jar-example/target
+  
+  production:
+    build: ./production
+    volumes: 
+      - app:/app
+    ports: 
+      - 8888:8080
+
+volumes:
+  app:
+
+  
